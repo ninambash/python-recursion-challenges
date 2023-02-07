@@ -12,3 +12,16 @@ Output: 4
 Input: 'SpamAndEggs'
 Output: 8
 '''
+def count_consonants(string, index=0, count=0):
+    vowels = "aeiouAEIOU"
+    
+    if index == len(string):
+        return count
+    elif string[index] not in vowels:
+        count += 1
+    
+    return count_consonants(string, index + 1, count)
+print(count_consonants("snakes")) # Output: 4
+print(count_consonants("SpamAndEggs")) # Output: 8
+
+

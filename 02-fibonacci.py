@@ -18,3 +18,14 @@ output: 2
 input: 30
 output: 832040
 '''
+
+def fib(n):
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        return fib(n - 1) + fib(n - 2)
+print(fib(10)) # Output: 55
+print(fib(3)) # Output: 2
+print(fib(30)) # Output: 832040

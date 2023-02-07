@@ -33,6 +33,20 @@ d: 4
 '''
 
 # use these for testing
+
+def pretty_print(dictionary, indent):
+    for key, value in dictionary.items():
+        print(indent + str(key) + ":", end=" ")
+        if isinstance(value, dict):
+            print()
+            pretty_print(value, indent + "  ")
+        else:
+            print(value)
+
 o1 = {"a": 1, "b": 2}
 o2 = {"a": 1, "b": 2, "c": {"name": "Bruce Wayne", "occupation": "Hero"}, "d": 4}
 o3 = {"a": 1, "b": 2, "c": {"name": "Bruce Wayne", "occupation": "Hero", "friends": {"spiderman": {"name": "Peter Parker"}, "superman": {"name": "Clark Kent"}}}, "d": 4}
+
+pretty_print(o1, "")
+pretty_print(o2, "")
+pretty_print(o3, "")
